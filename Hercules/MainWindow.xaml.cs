@@ -23,6 +23,26 @@ namespace Hercules
         public MainWindow()
         {
             InitializeComponent();
+            cboxPermissions.ItemsSource = LoadComboBoxData();
+        }
+        private string [] LoadComboBoxData()
+        {
+            string[] strArray =
+            {
+                "Administrator",
+                "Trainer",
+                "Reception"
+            };
+            return strArray;
+        }
+
+        private void BtnLogIn_Click(object sender, RoutedEventArgs e)
+        {
+            //Podłączenie do bazy danych
+            string val = cboxPermissions.SelectedItem.ToString();
+            string t = "Trainer";
+            MessageBox.Show(cboxPermissions.SelectedItem.ToString());
+           
         }
     }
 }

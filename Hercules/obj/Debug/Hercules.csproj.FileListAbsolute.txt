@@ -1,0 +1,15 @@
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\Hercules.exe.config
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\Hercules.exe
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\Hercules.pdb
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.csprojResolveAssemblyReference.cache
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\MainWindow.g.cs
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\App.g.cs
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules_MarkupCompile.cache
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules_MarkupCompile.lref
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\MainWindow.baml
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.g.resources
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.Properties.Resources.resources
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.csproj.GenerateResource.Cache
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.csproj.CoreCompileInputs.cache
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.exe
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.pdb

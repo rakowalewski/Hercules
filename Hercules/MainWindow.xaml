@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:Hercules"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Grid RenderTransformOrigin="0.524,0.501">
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnLogIn" Content="Log In" HorizontalAlignment="Left" Margin="185,222,0,0" VerticalAlignment="Top" Width="75" Click="BtnLogIn_Click"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="171,119,0,0" VerticalAlignment="Top" Width="120"/>
         
+        <ComboBox x:Name="cboxPermissions" HorizontalAlignment="Left" Margin="171,175,0,0" VerticalAlignment="Top" Width="120">
+            
+        </ComboBox>
+        
+        <Label Content="Login:" HorizontalAlignment="Left" Margin="171,38,0,0" VerticalAlignment="Top" Width="66" Height="28"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="171,93,0,0" VerticalAlignment="Top"/>
+        <Label Content="Permissions:" HorizontalAlignment="Left" Margin="171,144,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
