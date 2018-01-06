@@ -41,6 +41,7 @@ namespace Hercules
         {
             //Podłączenie do bazy danych
 
+
             try
             {
                 var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";  //Łączenie do bazy danych
@@ -49,33 +50,47 @@ namespace Hercules
                     con.Open();
                     string txtUser = tbxLogin.Text;
                     string txtPasswd = pbPassword.Password.ToString();
-                    string cbPermission = cboxPermissions.ToString();
+                    string cbPermission = cboxPermissions.Text;
 
-                   
-                        string query = "SELECT * FROM Trener WHERE Login=@user AND Haslo=@paswd";
-                        SqlCommand cmd = new SqlCommand(query, con);
-                        cmd.Parameters.Add(new SqlParameter("@user", txtUser));
-                        cmd.Parameters.Add(new SqlParameter("@paswd", txtPasswd));
-                        SqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.HasRows == true)
+                    string query = "SELECT * FROM Konta WHERE Login=@user AND Haslo=@paswd AND Przywileje=@perm";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.Add(new SqlParameter("@user", txtUser));
+                    cmd.Parameters.Add(new SqlParameter("@paswd", txtPasswd));
+                    cmd.Parameters.Add(new SqlParameter("@perm", cbPermission));
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows == true)
+                    {
+                        
+                        if (cbPermission == "Trener")
                         {
-                        trener tr = new trener();
-                        tr.Show();
-
+                            trener tr = new trener();
+                            tr.ShowDialog();
                            
-                            
+                        }
+                        else if (cbPermission == "Recepcja")
+                        {
+                            recepcja rc = new recepcja();
+                            rc.Show();
                         }
                         else
                         {
-                            MessageBox.Show("Invalid Login");
+                            administrator ad = new administrator();
+                            ad.Show();
                         }
-                        con.Close();
 
-                 /*
-                  * Na tą chwile działa podłączenie.
-                  * Pojawia się już okno prawidłowo
-                  * Łączy się do tabeli Konta i jeśli jest login i hasło to ok potem sprawdza jaki pracownik i pokazuje dane okno.
-                    */
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Login");
+                    }
+                    con.Close();
+
+                    /*
+                     * Na tą chwile działa podłączenie.
+                     * Pojawia się już okno prawidłowo
+                     * Okna pojawiają się w zależności od pracownika
+                       */
 
 
                 }
@@ -92,8 +107,8 @@ namespace Hercules
 
 
 
-            
-           
+
+
         }
     }
 }

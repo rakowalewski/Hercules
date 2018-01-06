@@ -20,3 +20,7 @@ E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\EntityFramework.Sql
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\EntityFramework.xml
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\EntityFramework.SqlServer.xml
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Trener.baml
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\administrator.g.cs
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\recepcja.g.cs
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\administrator.baml
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\recepcja.baml
