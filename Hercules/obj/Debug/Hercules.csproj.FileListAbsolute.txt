@@ -13,3 +13,10 @@ E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.csproj.Gen
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.csproj.CoreCompileInputs.cache
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.exe
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.pdb
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Trener.g.cs
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules_Content.g.cs
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\EntityFramework.dll
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\EntityFramework.SqlServer.dll
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\EntityFramework.xml
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\EntityFramework.SqlServer.xml
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Trener.baml

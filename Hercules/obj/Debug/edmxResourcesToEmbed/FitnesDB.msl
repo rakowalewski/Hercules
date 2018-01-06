@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FITNESModelStoreContainer" CdmEntityContainer="FITNESEntities">
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="FITNESModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="IdAdministrator" ColumnName="IdAdministrator" />
+          <ScalarProperty Name="IdPrzywileje" ColumnName="IdPrzywileje" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dziens">
+      <EntityTypeMapping TypeName="FITNESModel.Dzien">
+        <MappingFragment StoreEntitySet="Dzien">
+          <ScalarProperty Name="IdDzien" ColumnName="IdDzien" />
+          <ScalarProperty Name="Dzien1" ColumnName="Dzien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Harmonograms">
+      <EntityTypeMapping TypeName="FITNESModel.Harmonogram">
+        <MappingFragment StoreEntitySet="Harmonogram">
+          <ScalarProperty Name="IdHarmonogramu" ColumnName="IdHarmonogramu" />
+          <ScalarProperty Name="IdDzien" ColumnName="IdDzien" />
+          <ScalarProperty Name="IdTrener" ColumnName="IdTrener" />
+          <ScalarProperty Name="GodzinaRozpoczecia" ColumnName="GodzinaRozpoczecia" />
+          <ScalarProperty Name="GodzinaZakonczenia" ColumnName="GodzinaZakonczenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klients">
+      <EntityTypeMapping TypeName="FITNESModel.Klient">
+        <MappingFragment StoreEntitySet="Klient">
+          <ScalarProperty Name="IdKlient" ColumnName="IdKlient" />
+          <ScalarProperty Name="IdTrener" ColumnName="IdTrener" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Plec" ColumnName="Plec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Przywilejes">
+      <EntityTypeMapping TypeName="FITNESModel.Przywileje">
+        <MappingFragment StoreEntitySet="Przywileje">
+          <ScalarProperty Name="IdPrzywileje" ColumnName="IdPrzywileje" />
+          <ScalarProperty Name="Przywilej" ColumnName="Przywilej" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recepcjas">
+      <EntityTypeMapping TypeName="FITNESModel.Recepcja">
+        <MappingFragment StoreEntitySet="Recepcja">
+          <ScalarProperty Name="IdRecepcja" ColumnName="IdRecepcja" />
+          <ScalarProperty Name="IdPrzywileje" ColumnName="IdPrzywileje" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="FITNESModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treners">
+      <EntityTypeMapping TypeName="FITNESModel.Trener">
+        <MappingFragment StoreEntitySet="Trener">
+          <ScalarProperty Name="IdTrener" ColumnName="IdTrener" />
+          <ScalarProperty Name="IdPrzywileje" ColumnName="IdPrzywileje" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trenings">
+      <EntityTypeMapping TypeName="FITNESModel.Trening">
+        <MappingFragment StoreEntitySet="Trening">
+          <ScalarProperty Name="IdTrening" ColumnName="IdTrening" />
+          <ScalarProperty Name="IdTrener" ColumnName="IdTrener" />
+          <ScalarProperty Name="IdKlient" ColumnName="IdKlient" />
+          <ScalarProperty Name="DataGodzRozp" ColumnName="DataGodzRozp" />
+          <ScalarProperty Name="DataGodzZak" ColumnName="DataGodzZak" />
+          <ScalarProperty Name="CzyZakonczony" ColumnName="CzyZakonczony" />
+          <ScalarProperty Name="Kwota" ColumnName="Kwota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wywiads">
+      <EntityTypeMapping TypeName="FITNESModel.Wywiad">
+        <MappingFragment StoreEntitySet="Wywiad">
+          <ScalarProperty Name="IdWywiad" ColumnName="IdWywiad" />
+          <ScalarProperty Name="IdKlient" ColumnName="IdKlient" />
+          <ScalarProperty Name="WadaSerca" ColumnName="WadaSerca" />
+          <ScalarProperty Name="Nadcisnienie" ColumnName="Nadcisnienie" />
+          <ScalarProperty Name="ZabRytmuSerca" ColumnName="ZabRytmuSerca" />
+          <ScalarProperty Name="Epilepsja" ColumnName="Epilepsja" />
+          <ScalarProperty Name="Alergia" ColumnName="Alergia" />
+          <ScalarProperty Name="Astma" ColumnName="Astma" />
+          <ScalarProperty Name="Cukrzyca" ColumnName="Cukrzyca" />
+          <ScalarProperty Name="InneChoroby" ColumnName="InneChoroby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zajecias">
+      <EntityTypeMapping TypeName="FITNESModel.Zajecia">
+        <MappingFragment StoreEntitySet="Zajecia">
+          <ScalarProperty Name="IdZajecia" ColumnName="IdZajecia" />
+          <ScalarProperty Name="IdTrening" ColumnName="IdTrening" />
+          <ScalarProperty Name="NazwaZajec" ColumnName="NazwaZajec" />
+          <ScalarProperty Name="TypZajec" ColumnName="TypZajec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zdjecies">
+      <EntityTypeMapping TypeName="FITNESModel.Zdjecie">
+        <MappingFragment StoreEntitySet="Zdjecie">
+          <ScalarProperty Name="IdZdjecie" ColumnName="IdZdjecie" />
+          <ScalarProperty Name="IdKlient" ColumnName="IdKlient" />
+          <ScalarProperty Name="Zdjecie1" ColumnName="Zdjecie" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

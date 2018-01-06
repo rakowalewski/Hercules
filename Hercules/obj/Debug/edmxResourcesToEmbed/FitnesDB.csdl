@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FITNESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="IdAdministrator" />
+    </Key>
+    <Property Name="IdAdministrator" Type="Int32" Nullable="false" />
+    <Property Name="IdPrzywileje" Type="Int32" />
+    <Property Name="Imie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Nazwisko" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Haslo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Przywileje" Relationship="Self.FK_Administrator_Przywileje" FromRole="Administrator" ToRole="Przywileje" />
+  </EntityType>
+  <EntityType Name="Dzien">
+    <Key>
+      <PropertyRef Name="IdDzien" />
+    </Key>
+    <Property Name="IdDzien" Type="Int32" Nullable="false" />
+    <Property Name="Dzien1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Harmonograms" Relationship="Self.FK_Harmonogram_Dzien" FromRole="Dzien" ToRole="Harmonogram" />
+  </EntityType>
+  <EntityType Name="Harmonogram">
+    <Key>
+      <PropertyRef Name="IdHarmonogramu" />
+    </Key>
+    <Property Name="IdHarmonogramu" Type="Int32" Nullable="false" />
+    <Property Name="IdDzien" Type="Int32" />
+    <Property Name="IdTrener" Type="Int32" />
+    <Property Name="GodzinaRozpoczecia" Type="DateTime" Precision="0" />
+    <Property Name="GodzinaZakonczenia" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Dzien" Relationship="Self.FK_Harmonogram_Dzien" FromRole="Harmonogram" ToRole="Dzien" />
+    <NavigationProperty Name="Trener" Relationship="Self.FK_Harmonogram_Trener" FromRole="Harmonogram" ToRole="Trener" />
+  </EntityType>
+  <EntityType Name="Klient">
+    <Key>
+      <PropertyRef Name="IdKlient" />
+    </Key>
+    <Property Name="IdKlient" Type="Int32" Nullable="false" />
+    <Property Name="IdTrener" Type="Int32" />
+    <Property Name="Imie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Nazwisko" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Pesel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Plec" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Trener" Relationship="Self.FK_Klient_Trener" FromRole="Klient" ToRole="Trener" />
+    <NavigationProperty Name="Trenings" Relationship="Self.FK_Trening_Klient" FromRole="Klient" ToRole="Trening" />
+    <NavigationProperty Name="Wywiads" Relationship="Self.FK_Wywiad_Klient" FromRole="Klient" ToRole="Wywiad" />
+    <NavigationProperty Name="Zdjecies" Relationship="Self.FK_Zdjecie_Klient" FromRole="Klient" ToRole="Zdjecie" />
+  </EntityType>
+  <EntityType Name="Przywileje">
+    <Key>
+      <PropertyRef Name="IdPrzywileje" />
+    </Key>
+    <Property Name="IdPrzywileje" Type="Int32" Nullable="false" />
+    <Property Name="Przywilej" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Administrators" Relationship="Self.FK_Administrator_Przywileje" FromRole="Przywileje" ToRole="Administrator" />
+    <NavigationProperty Name="Recepcjas" Relationship="Self.FK_Recepcja_Przywileje" FromRole="Przywileje" ToRole="Recepcja" />
+    <NavigationProperty Name="Treners" Relationship="Self.FK_Trener_Przywileje" FromRole="Przywileje" ToRole="Trener" />
+  </EntityType>
+  <EntityType Name="Recepcja">
+    <Key>
+      <PropertyRef Name="IdRecepcja" />
+    </Key>
+    <Property Name="IdRecepcja" Type="Int32" Nullable="false" />
+    <Property Name="IdPrzywileje" Type="Int32" />
+    <Property Name="Imie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Nazwisko" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Haslo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Przywileje" Relationship="Self.FK_Recepcja_Przywileje" FromRole="Recepcja" ToRole="Przywileje" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Trener">
+    <Key>
+      <PropertyRef Name="IdTrener" />
+    </Key>
+    <Property Name="IdTrener" Type="Int32" Nullable="false" />
+    <Property Name="IdPrzywileje" Type="Int32" />
+    <Property Name="Imie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Nazwisko" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Haslo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Harmonograms" Relationship="Self.FK_Harmonogram_Trener" FromRole="Trener" ToRole="Harmonogram" />
+    <NavigationProperty Name="Klients" Relationship="Self.FK_Klient_Trener" FromRole="Trener" ToRole="Klient" />
+    <NavigationProperty Name="Przywileje" Relationship="Self.FK_Trener_Przywileje" FromRole="Trener" ToRole="Przywileje" />
+    <NavigationProperty Name="Trenings" Relationship="Self.FK_Trening_Trener" FromRole="Trener" ToRole="Trening" />
+  </EntityType>
+  <EntityType Name="Trening">
+    <Key>
+      <PropertyRef Name="IdTrening" />
+    </Key>
+    <Property Name="IdTrening" Type="Int32" Nullable="false" />
+    <Property Name="IdTrener" Type="Int32" />
+    <Property Name="IdKlient" Type="Int32" />
+    <Property Name="DataGodzRozp" Type="DateTime" Precision="3" />
+    <Property Name="DataGodzZak" Type="DateTime" Precision="3" />
+    <Property Name="CzyZakonczony" Type="Boolean" />
+    <Property Name="Kwota" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Klient" Relationship="Self.FK_Trening_Klient" FromRole="Trening" ToRole="Klient" />
+    <NavigationProperty Name="Trener" Relationship="Self.FK_Trening_Trener" FromRole="Trening" ToRole="Trener" />
+    <NavigationProperty Name="Zajecias" Relationship="Self.FK_Zajecia_Trening" FromRole="Trening" ToRole="Zajecia" />
+  </EntityType>
+  <EntityType Name="Wywiad">
+    <Key>
+      <PropertyRef Name="IdWywiad" />
+    </Key>
+    <Property Name="IdWywiad" Type="Int32" Nullable="false" />
+    <Property Name="IdKlient" Type="Int32" />
+    <Property Name="WadaSerca" Type="Boolean" />
+    <Property Name="Nadcisnienie" Type="Boolean" />
+    <Property Name="ZabRytmuSerca" Type="Boolean" />
+    <Property Name="Epilepsja" Type="Boolean" />
+    <Property Name="Alergia" Type="Boolean" />
+    <Property Name="Astma" Type="Boolean" />
+    <Property Name="Cukrzyca" Type="Boolean" />
+    <Property Name="InneChoroby" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Klient" Relationship="Self.FK_Wywiad_Klient" FromRole="Wywiad" ToRole="Klient" />
+  </EntityType>
+  <EntityType Name="Zajecia">
+    <Key>
+      <PropertyRef Name="IdZajecia" />
+    </Key>
+    <Property Name="IdZajecia" Type="Int32" Nullable="false" />
+    <Property Name="IdTrening" Type="Int32" />
+    <Property Name="NazwaZajec" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TypZajec" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Trening" Relationship="Self.FK_Zajecia_Trening" FromRole="Zajecia" ToRole="Trening" />
+  </EntityType>
+  <EntityType Name="Zdjecie">
+    <Key>
+      <PropertyRef Name="IdZdjecie" />
+    </Key>
+    <Property Name="IdZdjecie" Type="Int32" Nullable="false" />
+    <Property Name="IdKlient" Type="Int32" />
+    <Property Name="Zdjecie1" Type="Binary" MaxLength="2000" FixedLength="false" />
+    <Property Name="Data" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Klient" Relationship="Self.FK_Zdjecie_Klient" FromRole="Zdjecie" ToRole="Klient" />
+  </EntityType>
+  <Association Name="FK_Administrator_Przywileje">
+    <End Role="Przywileje" Type="Self.Przywileje" Multiplicity="0..1" />
+    <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Przywileje">
+        <PropertyRef Name="IdPrzywileje" />
+      </Principal>
+      <Dependent Role="Administrator">
+        <PropertyRef Name="IdPrzywileje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Harmonogram_Dzien">
+    <End Role="Dzien" Type="Self.Dzien" Multiplicity="0..1" />
+    <End Role="Harmonogram" Type="Self.Harmonogram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dzien">
+        <PropertyRef Name="IdDzien" />
+      </Principal>
+      <Dependent Role="Harmonogram">
+        <PropertyRef Name="IdDzien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Harmonogram_Trener">
+    <End Role="Trener" Type="Self.Trener" Multiplicity="0..1" />
+    <End Role="Harmonogram" Type="Self.Harmonogram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trener">
+        <PropertyRef Name="IdTrener" />
+      </Principal>
+      <Dependent Role="Harmonogram">
+        <PropertyRef Name="IdTrener" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Klient_Trener">
+    <End Role="Trener" Type="Self.Trener" Multiplicity="0..1" />
+    <End Role="Klient" Type="Self.Klient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trener">
+        <PropertyRef Name="IdTrener" />
+      </Principal>
+      <Dependent Role="Klient">
+        <PropertyRef Name="IdTrener" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trening_Klient">
+    <End Role="Klient" Type="Self.Klient" Multiplicity="0..1" />
+    <End Role="Trening" Type="Self.Trening" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klient">
+        <PropertyRef Name="IdKlient" />
+      </Principal>
+      <Dependent Role="Trening">
+        <PropertyRef Name="IdKlient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Wywiad_Klient">
+    <End Role="Klient" Type="Self.Klient" Multiplicity="0..1" />
+    <End Role="Wywiad" Type="Self.Wywiad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klient">
+        <PropertyRef Name="IdKlient" />
+      </Principal>
+      <Dependent Role="Wywiad">
+        <PropertyRef Name="IdKlient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zdjecie_Klient">
+    <End Role="Klient" Type="Self.Klient" Multiplicity="0..1" />
+    <End Role="Zdjecie" Type="Self.Zdjecie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klient">
+        <PropertyRef Name="IdKlient" />
+      </Principal>
+      <Dependent Role="Zdjecie">
+        <PropertyRef Name="IdKlient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recepcja_Przywileje">
+    <End Role="Przywileje" Type="Self.Przywileje" Multiplicity="0..1" />
+    <End Role="Recepcja" Type="Self.Recepcja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Przywileje">
+        <PropertyRef Name="IdPrzywileje" />
+      </Principal>
+      <Dependent Role="Recepcja">
+        <PropertyRef Name="IdPrzywileje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trener_Przywileje">
+    <End Role="Przywileje" Type="Self.Przywileje" Multiplicity="0..1" />
+    <End Role="Trener" Type="Self.Trener" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Przywileje">
+        <PropertyRef Name="IdPrzywileje" />
+      </Principal>
+      <Dependent Role="Trener">
+        <PropertyRef Name="IdPrzywileje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trening_Trener">
+    <End Role="Trener" Type="Self.Trener" Multiplicity="0..1" />
+    <End Role="Trening" Type="Self.Trening" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trener">
+        <PropertyRef Name="IdTrener" />
+      </Principal>
+      <Dependent Role="Trening">
+        <PropertyRef Name="IdTrener" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zajecia_Trening">
+    <End Role="Trening" Type="Self.Trening" Multiplicity="0..1" />
+    <End Role="Zajecia" Type="Self.Zajecia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trening">
+        <PropertyRef Name="IdTrening" />
+      </Principal>
+      <Dependent Role="Zajecia">
+        <PropertyRef Name="IdTrening" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FITNESEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrators" EntityType="Self.Administrator" />
+    <EntitySet Name="Dziens" EntityType="Self.Dzien" />
+    <EntitySet Name="Harmonograms" EntityType="Self.Harmonogram" />
+    <EntitySet Name="Klients" EntityType="Self.Klient" />
+    <EntitySet Name="Przywilejes" EntityType="Self.Przywileje" />
+    <EntitySet Name="Recepcjas" EntityType="Self.Recepcja" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Treners" EntityType="Self.Trener" />
+    <EntitySet Name="Trenings" EntityType="Self.Trening" />
+    <EntitySet Name="Wywiads" EntityType="Self.Wywiad" />
+    <EntitySet Name="Zajecias" EntityType="Self.Zajecia" />
+    <EntitySet Name="Zdjecies" EntityType="Self.Zdjecie" />
+    <AssociationSet Name="FK_Administrator_Przywileje" Association="Self.FK_Administrator_Przywileje">
+      <End Role="Przywileje" EntitySet="Przywilejes" />
+      <End Role="Administrator" EntitySet="Administrators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Harmonogram_Dzien" Association="Self.FK_Harmonogram_Dzien">
+      <End Role="Dzien" EntitySet="Dziens" />
+      <End Role="Harmonogram" EntitySet="Harmonograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Harmonogram_Trener" Association="Self.FK_Harmonogram_Trener">
+      <End Role="Trener" EntitySet="Treners" />
+      <End Role="Harmonogram" EntitySet="Harmonograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Klient_Trener" Association="Self.FK_Klient_Trener">
+      <End Role="Trener" EntitySet="Treners" />
+      <End Role="Klient" EntitySet="Klients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trening_Klient" Association="Self.FK_Trening_Klient">
+      <End Role="Klient" EntitySet="Klients" />
+      <End Role="Trening" EntitySet="Trenings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Wywiad_Klient" Association="Self.FK_Wywiad_Klient">
+      <End Role="Klient" EntitySet="Klients" />
+      <End Role="Wywiad" EntitySet="Wywiads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zdjecie_Klient" Association="Self.FK_Zdjecie_Klient">
+      <End Role="Klient" EntitySet="Klients" />
+      <End Role="Zdjecie" EntitySet="Zdjecies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recepcja_Przywileje" Association="Self.FK_Recepcja_Przywileje">
+      <End Role="Przywileje" EntitySet="Przywilejes" />
+      <End Role="Recepcja" EntitySet="Recepcjas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trener_Przywileje" Association="Self.FK_Trener_Przywileje">
+      <End Role="Przywileje" EntitySet="Przywilejes" />
+      <End Role="Trener" EntitySet="Treners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trening_Trener" Association="Self.FK_Trening_Trener">
+      <End Role="Trener" EntitySet="Treners" />
+      <End Role="Trening" EntitySet="Trenings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zajecia_Trening" Association="Self.FK_Zajecia_Trening">
+      <End Role="Trening" EntitySet="Trenings" />
+      <End Role="Zajecia" EntitySet="Zajecias" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

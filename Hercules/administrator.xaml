@@ -1,0 +1,33 @@
+﻿<Window x:Class="Hercules.administrator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hercules"
+        mc:Ignorable="d"
+        Title="administrator" Height="300" Width="300">
+    <Grid>
+        <!--Definicja wierszy i kolumn-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Definicja elementów Menu-->
+        <Button Content="Statystyki" Grid.Row="0" Margin="5"/>
+        <Button Content="Raporty" Grid.Row="1" Margin="5"/>
+        <Button Content="Konta" Grid.Row="2" Margin="5"/>
+        <Button Content="Ustawienia" Grid.Row="3" Margin="5"/>
+
+        <!--Definicja Tabcontrol po prawej stronie-->
+        <TabControl Grid.Column="1" Grid.Row="0" Grid.RowSpan="4">
+
+        </TabControl>
+    </Grid>
+</Window>

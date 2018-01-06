@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace Hercules
 {
@@ -25,13 +26,13 @@ namespace Hercules
             InitializeComponent();
             cboxPermissions.ItemsSource = LoadComboBoxData();
         }
-        private string [] LoadComboBoxData()
+        private string [] LoadComboBoxData() //data to combobox
         {
             string[] strArray =
             {
                 "Administrator",
-                "Trainer",
-                "Reception"
+                "Trener",
+                "Recepcja"
             };
             return strArray;
         }
@@ -39,9 +40,59 @@ namespace Hercules
         private void BtnLogIn_Click(object sender, RoutedEventArgs e)
         {
             //Podłączenie do bazy danych
-            string val = cboxPermissions.SelectedItem.ToString();
-            string t = "Trainer";
-            MessageBox.Show(cboxPermissions.SelectedItem.ToString());
+
+            try
+            {
+                var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";  //Łączenie do bazy danych
+                using (var con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string txtUser = tbxLogin.Text;
+                    string txtPasswd = pbPassword.Password.ToString();
+                    string cbPermission = cboxPermissions.ToString();
+
+                   
+                        string query = "SELECT * FROM Trener WHERE Login=@user AND Haslo=@paswd";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        cmd.Parameters.Add(new SqlParameter("@user", txtUser));
+                        cmd.Parameters.Add(new SqlParameter("@paswd", txtPasswd));
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.HasRows == true)
+                        {
+                        trener tr = new trener();
+                        tr.Show();
+
+                           
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Login");
+                        }
+                        con.Close();
+
+                 /*
+                  * Na tą chwile działa podłączenie.
+                  * Pojawia się już okno prawidłowo
+                  * Łączy się do tabeli Konta i jeśli jest login i hasło to ok potem sprawdza jaki pracownik i pokazuje dane okno.
+                    */
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+
+
+
+
+
+            
            
         }
     }
