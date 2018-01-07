@@ -21,17 +21,16 @@
         </Grid.RowDefinitions>
 
         <!--Definicja elementów Menu-->
+        <!--Definicja Tabcontrol po prawej stronie-->
+        <TabControl x:Name="tabStart" Grid.Column="1" Grid.RowSpan="5"/>
+
+        <!--Definicja elementów Menu-->
         <Button Content="Klient" Grid.Row="0" Margin="5"/>
         <Button Content="Trening" Grid.Row="1" Margin="5"/>
         <Button Content="Harmonogram" Grid.Row="2" Margin="5"/>
         <Button Content="Statystyki" Grid.Row="3" Margin="5"/>
         <Button Content="Ustawienia" Grid.Row="4" Margin="5"/>
-
-        <!--Definicja Tabcontrol po prawej stronie-->
-        <TabControl x:Name="tabStart" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5">
-
-        </TabControl>
-        <TabControl x:Name="tabKlient" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5">
+        <TabControl x:Name="tabKlient" Grid.RowSpan="5" Grid.Column="1">
             <TabItem Header="Dodaj">
                 <Grid>
                     <Label Content="Imie:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25"/>
@@ -52,14 +51,29 @@
                     <Image x:Name="imgKlient" Margin="391,10,36,344" />
                     <Button x:Name="btnAddPhoto" Content="Wybierz Zdjęcie" HorizontalAlignment="Left" Margin="464,175,0,0" VerticalAlignment="Top" Width="90" Click="btnAddPhoto_Click"/>
                     <Button x:Name="btnAddClient" Content="Dodaj Klienta" Click="btnAddClient_Click" Margin="15,222,498,240"/>
-                    
+
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Wyszukaj">
+
+            <TabItem Header="Wyszukaj" Margin="-2,0,-2,-2">
+                <Grid>
+                    <Label Content="Szukaj:" Height="28" Margin="0,0,576,474" VerticalAlignment="Bottom"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="49,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="378"/>
+                    <Button x:Name="btnSzukaj" Content="Szukaj" HorizontalAlignment="Left" Margin="442,8,0,0" VerticalAlignment="Top" Width="124"/>
+                    <DataGrid HorizontalAlignment="Left" Height="461" Margin="0,42,0,0" VerticalAlignment="Top" Width="652"/>
+
+                </Grid>
+
 
             </TabItem>
-            <Image Height="100" Width="100"/>
+
+
+
+
+
+
+
 
         </TabControl>
     </Grid>

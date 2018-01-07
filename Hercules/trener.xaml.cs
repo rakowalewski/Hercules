@@ -24,6 +24,7 @@ namespace Hercules
         public trener()
         {
             InitializeComponent();
+            
         }
 
         private void btnAddPhoto_Click(object sender, RoutedEventArgs e)
