@@ -70,12 +70,12 @@ namespace Hercules
                         else if (cbPermission == "Recepcja")
                         {
                             recepcja rc = new recepcja();
-                            rc.Show();
+                            rc.ShowDialog();
                         }
                         else
                         {
                             administrator ad = new administrator();
-                            ad.Show();
+                            ad.ShowDialog();
                         }
 
 

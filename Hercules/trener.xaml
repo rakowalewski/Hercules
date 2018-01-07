@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hercules"
         mc:Ignorable="d"
-        Title="trener" Height="300" Width="300">
+        Title="trener" Height="562.382" Width="755.744">
     <Grid>
         <!--Definicja wierszy i kolumn-->
         <Grid.ColumnDefinitions>
@@ -28,7 +28,38 @@
         <Button Content="Ustawienia" Grid.Row="4" Margin="5"/>
 
         <!--Definicja Tabcontrol po prawej stronie-->
-        <TabControl Grid.Column="1" Grid.Row="0" Grid.RowSpan="5">
+        <TabControl x:Name="tabStart" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5">
+
+        </TabControl>
+        <TabControl x:Name="tabKlient" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5">
+            <TabItem Header="Dodaj">
+                <Grid>
+                    <Label Content="Imie:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox x:Name="tbxImie" HorizontalAlignment="Left" Height="23" Margin="53,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Nazwisko:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.219,-0.372"/>
+                    <Label Content="Pesel:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Adres:" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Telefon:" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.477,0.769"/>
+                    <Label Content="Email:" HorizontalAlignment="Left" Margin="12,149,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.488,-1.346"/>
+                    <Label Content="Płeć:" HorizontalAlignment="Left" Margin="15,175,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbxNazwisko" HorizontalAlignment="Left" Height="23" Margin="73,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="tbxPesel" HorizontalAlignment="Left" Height="23" Margin="54,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox  x:Name="tbxAdres" HorizontalAlignment="Left" Height="23" Margin="54,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox  x:Name="tbxTelefon" HorizontalAlignment="Left" Height="23" Margin="58,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox  x:Name="tbxEmail" HorizontalAlignment="Left" Height="23" Margin="58,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <RadioButton x:Name="rbKobieta" Content="Kobieta" HorizontalAlignment="Left" Margin="54,185,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="rbMezczyzna" Content="Mężczyzna" HorizontalAlignment="Left" Margin="152,185,0,0" VerticalAlignment="Top"/>
+                    <Image x:Name="imgKlient" Margin="391,10,36,344" />
+                    <Button x:Name="btnAddPhoto" Content="Wybierz Zdjęcie" HorizontalAlignment="Left" Margin="464,175,0,0" VerticalAlignment="Top" Width="90" Click="btnAddPhoto_Click"/>
+                    <Button x:Name="btnAddClient" Content="Dodaj Klienta" Click="btnAddClient_Click" Margin="15,222,498,240"/>
+                    
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wyszukaj">
+
+            </TabItem>
+            <Image Height="100" Width="100"/>
 
         </TabControl>
     </Grid>

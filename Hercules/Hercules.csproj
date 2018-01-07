@@ -90,6 +90,7 @@
     <Compile Include="Harmonogram.cs">
       <DependentUpon>FitnesDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Klasy\Klient.cs" />
     <Compile Include="Klient.cs">
       <DependentUpon>FitnesDB.tt</DependentUpon>
     </Compile>
