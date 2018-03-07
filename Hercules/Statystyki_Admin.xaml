@@ -1,0 +1,44 @@
+﻿<Page x:Name="StatystykiAdminPage" x:Class="Hercules.Statystyki_Admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hercules"
+      mc:Ignorable="d"
+      Title="Statystyki_Admin" Height="968.2" Width="1195.775">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="948" Margin="10,10,0,0" VerticalAlignment="Top" Width="1186">
+            <TabItem Header="Raporty">
+                <Grid Background="#FFE5E5E5">
+
+                    <Label Content="Wybierz Trenera:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <ComboBox x:Name="TrenerCB" HorizontalAlignment="Left" Margin="113,14,0,0" VerticalAlignment="Top" Width="141" Loaded="ComboBox_Loaded"/>
+                    <Label Content="Miesiąc: " HorizontalAlignment="Left" Margin="29,86,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="MiesiacCB" HorizontalAlignment="Left" Margin="84,90,0,0" VerticalAlignment="Top" Width="76" Loaded="MiesiacCB_Loaded"/>
+                    <Label Content="Rok: " HorizontalAlignment="Left" Margin="173,90,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label Content="Rok: " HorizontalAlignment="Left" Margin="173,176,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="RokMiesiacTB" HorizontalAlignment="Left" Height="23" Margin="214,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="RokRokTB" HorizontalAlignment="Left" Height="23" Margin="214,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <Button x:Name="PobierzMiesiacBTN" Content="Pobierz" HorizontalAlignment="Left" Margin="385,90,0,0" VerticalAlignment="Top" Width="87" Height="23" Grid.Column="2"/>
+                    <Button x:Name="PobierzRokBTN" Content="Pobierz" HorizontalAlignment="Left" Margin="385,176,0,0" VerticalAlignment="Top" Width="87" Height="23" Grid.Column="2"/>
+                    <Label Content="Zarobki: " HorizontalAlignment="Left" Margin="543,90,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label Content="Zarobki: " HorizontalAlignment="Left" Margin="543,173,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="ZarobkiMiesiacTB" HorizontalAlignment="Left" Height="23" Margin="604,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <TextBox x:Name="ZarobkiRokTB" HorizontalAlignment="Left" Height="23" Margin="604,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                    <Label Content="zł" HorizontalAlignment="Left" Margin="729,90,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label Content="zł" HorizontalAlignment="Left" Margin="729,169,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label Content="Raport miesięczny" HorizontalAlignment="Left" Margin="385,53,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.Column="2"/>
+                    <Label Content="Raport roczny: " HorizontalAlignment="Left" Margin="371,134,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.Column="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Historia Treningów">
+
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Page>

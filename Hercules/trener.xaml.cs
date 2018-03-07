@@ -25,65 +25,22 @@ namespace Hercules
         {
             InitializeComponent();
             
+            
         }
 
-        private void btnAddPhoto_Click(object sender, RoutedEventArgs e)
+        
+
+      
+
+        private void BtnTrening_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "image files |*.jpeg;*.png;*.gif";
-            if (ofd.ShowDialog() == true)
-            {
-                imgKlient.Source = new BitmapImage(new Uri(ofd.FileName));
-            }
-
-
+            
         }
 
-        private void btnAddClient_Click(object sender, RoutedEventArgs e)
+        private void BtnKlient_Click(object sender, RoutedEventArgs e)
         {
-            //Podłączenie się do bazy danych
-            try
-            {
-                Klient klient = new Klient();
-
-                var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";
-                using (var con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-                    klient.Imie = tbxImie.Text;
-                    klient.Nazwisko = tbxNazwisko.Text;
-                    klient.Pesel = tbxPesel.Text;
-                    klient.Adres = tbxAdres.Text;
-                    klient.Telefon = tbxTelefon.Text;
-                    klient.Email = tbxEmail.Text;
-                    if (rbKobieta.IsChecked == true)
-                    {
-                        klient.Plec = "Kobieta";
-                    }
-                    else if (rbMezczyzna.IsChecked == true)
-                    {
-                        klient.Plec = "Mężczyzna";
-                    }
-
-                    string query = "INSERT INTO Klient(Imie, Nazwisko, Pesel, Adres, Telefon, Email, Plec, Zdjecie)VALUES (@imie, @nazwisko, @pesel, @adres, @telefon, @email, @plec, @zdjecie);";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.Add(new SqlParameter("@imie", klient.Imie));
-                    cmd.Parameters.Add(new SqlParameter("@nazwisko", klient.Nazwisko));
-                    cmd.Parameters.Add(new SqlParameter("@pesel", klient.Pesel));
-                    cmd.Parameters.Add(new SqlParameter("@adres", klient.Adres));
-                    cmd.Parameters.Add(new SqlParameter("@telefon", klient.Telefon));
-                    cmd.Parameters.Add(new SqlParameter("@email", klient.Email));
-                    cmd.Parameters.Add(new SqlParameter("@plec", klient.Plec));
-                    cmd.Parameters.Add(new SqlParameter("@zdjecie", imgKlient.Source));
-                    
-
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            Klient_Trener klient = new Klient_Trener();
+            klient.ShowDialog();
         }
     }
 }

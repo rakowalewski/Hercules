@@ -91,8 +91,15 @@
       <DependentUpon>FitnesDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Klasy\Klient.cs" />
+    <Compile Include="Klasy\Pracownik.cs" />
     <Compile Include="Klient.cs">
       <DependentUpon>FitnesDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Klient_Trener.xaml.cs">
+      <DependentUpon>Klient_Trener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Konta_AdminPage.xaml.cs">
+      <DependentUpon>Konta_AdminPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Przywileje.cs">
       <DependentUpon>FitnesDB.tt</DependentUpon>
@@ -102,6 +109,9 @@
     </Compile>
     <Compile Include="recepcja.xaml.cs">
       <DependentUpon>recepcja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Statystyki_Admin.xaml.cs">
+      <DependentUpon>Statystyki_Admin.xaml</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>FitnesDB.tt</DependentUpon>
@@ -128,6 +138,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Klient_Trener.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Konta_AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -141,6 +159,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="recepcja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Statystyki_Admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

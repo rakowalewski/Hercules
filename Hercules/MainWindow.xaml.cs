@@ -25,6 +25,7 @@ namespace Hercules
         {
             InitializeComponent();
             cboxPermissions.ItemsSource = LoadComboBoxData();
+          
         }
         private string [] LoadComboBoxData() //data to combobox
         {
@@ -58,34 +59,39 @@ namespace Hercules
                     cmd.Parameters.Add(new SqlParameter("@paswd", txtPasswd));
                     cmd.Parameters.Add(new SqlParameter("@perm", cbPermission));
                     SqlDataReader dr = cmd.ExecuteReader();
+
                     if (dr.HasRows == true)
                     {
                         
                         if (cbPermission == "Trener")
                         {
                             trener tr = new trener();
-                            tr.ShowDialog();
+                            tr.Show();
+                           
                            
                         }
                         else if (cbPermission == "Recepcja")
                         {
                             recepcja rc = new recepcja();
-                            rc.ShowDialog();
+                            rc.Show();
+                            
                         }
                         else
                         {
                             administrator ad = new administrator();
-                            ad.ShowDialog();
-                        }
+                            ad.Show();
+                           
 
+                        }
+                        con.Close();
 
                     }
                     else
                     {
                         MessageBox.Show("Invalid Login");
                     }
-                    con.Close();
-
+                    
+                    this.Close();
                     /*
                      * Na tą chwile działa podłączenie.
                      * Pojawia się już okno prawidłowo
@@ -102,13 +108,18 @@ namespace Hercules
             }
 
 
+            base.OnClosed(e);
 
 
 
 
 
 
+        }
 
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

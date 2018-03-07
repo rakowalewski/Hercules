@@ -23,5 +23,15 @@ namespace Hercules
         {
             InitializeComponent();
         }
+
+        private void btnKonta_Click(object sender, RoutedEventArgs e)
+        {
+            AdminFrame.Content = new Konta_AdminPage();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AdminFrame.Content = new Statystyki_Admin();
+        }
     }
 }

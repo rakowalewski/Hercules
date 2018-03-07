@@ -1,7 +1,6 @@
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\Hercules.exe.config
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\Hercules.exe
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\bin\Debug\Hercules.pdb
-E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.csprojResolveAssemblyReference.cache
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\MainWindow.g.cs
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\App.g.cs
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules_MarkupCompile.cache
@@ -24,3 +23,10 @@ E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\administrator.g.cs
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\recepcja.g.cs
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\administrator.baml
 E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\recepcja.baml
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Hercules.csprojResolveAssemblyReference.cache
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Klient_Trener.g.cs
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Klient_Trener.baml
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Konta_AdminPage.g.cs
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Konta_AdminPage.baml
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Statystyki_Admin.g.cs
+E:\Rafał\Programowanie\GIT_Repo\Hercules\Hercules\obj\Debug\Statystyki_Admin.baml

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hercules"
         mc:Ignorable="d"
-        Title="administrator" Height="300" Width="300">
+        Title="administrator" Height="300" Width="300" WindowState="Maximized">
     <Grid>
         <!--Definicja wierszy i kolumn-->
         <Grid.ColumnDefinitions>
@@ -16,18 +16,16 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--Definicja elementów Menu-->
-        <Button Content="Statystyki" Grid.Row="0" Margin="5"/>
-        <Button Content="Raporty" Grid.Row="1" Margin="5"/>
-        <Button Content="Konta" Grid.Row="2" Margin="5"/>
+        <Button Content="Statystyki" Grid.Row="0" Margin="5" Click="Button_Click"/>
+        <Button x:Name="btnKonta" Content="Konta" Grid.Row="1" Margin="5" Click="btnKonta_Click"/>
         <Button Content="Ustawienia" Grid.Row="3" Margin="5"/>
 
         <!--Definicja Tabcontrol po prawej stronie-->
         <TabControl Grid.Column="1" Grid.Row="0" Grid.RowSpan="4">
-
+            <Frame x:Name="AdminFrame" NavigationUIVisibility="Hidden"/>
         </TabControl>
     </Grid>
 </Window>
