@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hercules", "Hercules\Hercules.csproj", "{11E817EE-2962-4AFF-A26E-FE6504A9D11B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{ADDA3ED8-6104-4081-A3C7-FE818EDAB8FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{11E817EE-2962-4AFF-A26E-FE6504A9D11B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11E817EE-2962-4AFF-A26E-FE6504A9D11B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11E817EE-2962-4AFF-A26E-FE6504A9D11B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADDA3ED8-6104-4081-A3C7-FE818EDAB8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADDA3ED8-6104-4081-A3C7-FE818EDAB8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADDA3ED8-6104-4081-A3C7-FE818EDAB8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADDA3ED8-6104-4081-A3C7-FE818EDAB8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
