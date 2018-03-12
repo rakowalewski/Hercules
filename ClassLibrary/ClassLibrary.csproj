@@ -40,13 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basic\Administrator.cs" />
+    <Compile Include="Basic\Harmonogram.cs" />
+    <Compile Include="Basic\Klient.cs" />
+    <Compile Include="Basic\Przywileje.cs" />
+    <Compile Include="Basic\Recepcja.cs" />
+    <Compile Include="Basic\Trener.cs" />
     <Compile Include="Basic\Trening.cs" />
+    <Compile Include="Basic\TreningKlienta.cs" />
+    <Compile Include="Basic\Wywiad.cs" />
     <Compile Include="Basic\Zajecia.cs" />
+    <Compile Include="Basic\Zdjecie.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="DAO\TreningDAO.cs" />
+    <Compile Include="DAO\ZajeciaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

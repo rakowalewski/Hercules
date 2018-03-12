@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hercules.Klasy
+namespace ClassLibrary.Basic
 {
-    public class Klient
+    class Klient
     {
         private string imie;
         private string nazwisko;
@@ -60,6 +60,5 @@ namespace Hercules.Klasy
             get { return imie; }
             set { imie = value; }
         }
-
     }
 }

@@ -90,7 +90,6 @@
     <Compile Include="Harmonogram.cs">
       <DependentUpon>FitnesDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Klasy\Klient.cs" />
     <Compile Include="Klasy\Pracownik.cs" />
     <Compile Include="Klient.cs">
       <DependentUpon>FitnesDB.tt</DependentUpon>
@@ -220,6 +219,11 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{adda3ed8-6104-4081-a3c7-fe818edab8fb}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

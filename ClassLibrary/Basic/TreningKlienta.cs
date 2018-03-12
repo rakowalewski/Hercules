@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Basic
 {
-    class Trening
+    class TreningKlienta
     {
         public int IdTrening { get; set; }
         public int IdTrener { get; set; }
