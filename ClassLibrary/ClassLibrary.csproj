@@ -52,7 +52,13 @@
     <Compile Include="Basic\Zajecia.cs" />
     <Compile Include="Basic\Zdjecie.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="DAO\BazaDAO.cs" />
+    <Compile Include="DAO\DodajUzytkownikaDAO.cs" />
+    <Compile Include="DAO\HarmonogramDAO.cs" />
+    <Compile Include="DAO\KlienciDAO.cs" />
+    <Compile Include="DAO\LogowanieDAO.cs" />
     <Compile Include="DAO\TreningDAO.cs" />
+    <Compile Include="DAO\WywiadDAO.cs" />
     <Compile Include="DAO\ZajeciaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
